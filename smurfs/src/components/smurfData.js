@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const smurfData = (props) => {
+const SmurfData = (props) => {
     return (
         <p>this is going to be the smurf data</p>
     );
@@ -10,4 +10,4 @@ const smurfData = (props) => {
 const mapStateToProps = (state) => {
 }
 
-export default smurfData;
+export default SmurfData;
