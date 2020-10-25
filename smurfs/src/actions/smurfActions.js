@@ -5,11 +5,11 @@ export const getSmurf = () => dispatch => {
     axios
     .get('http://localhost:3333/smurfs')
     .then((res) => {
-        dispatch({type: "FEATCHING_SMURF_SUCCESS", payload: res});
-        console.log('res', res);
+        dispatch({type: "FEATCHING_SMURF_SUCCESS", payload: res.data});
+        console.log('res', res.data);
     })
     .catch((err) => {
-        dispatch({type: "FEATCHING_SMURF_FAILURE", payload: err.response.message})
+        dispatch({type: "FEATCHING_SMURF_FAILURE"})
         console.log('err', err);
     });
 };

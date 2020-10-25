@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
-import { getSmurf } from './actions/smurfActions';
+import { getSmurf } from '../actions/smurfActions';
 
 const SmurfData = (props) => {
     useEffect(() => {
@@ -8,9 +8,10 @@ const SmurfData = (props) => {
     }, [props.getSmurf]);
 
     return (
-        <>
-        <p>name: {props.name}</p>
-        </>
+            <>
+            <p>name: {props.name}</p>
+            <p>age: {props.age}</p>
+            </>
     )
 };
 
