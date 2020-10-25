@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { smurfReducers } from './reducers/smurfReducers';
 
-let store = createStore(smurfReducer);
+let store = createStore(smurfReducers);
 
 ReactDOM.render(<Provider store={store}>
     <App />

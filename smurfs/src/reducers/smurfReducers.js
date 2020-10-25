@@ -1,10 +1,13 @@
 const initialState = {
-    
+          name: "Brainey",
+          age: 200,
+          height: "5cm",
+          id: 0
 };
 
-const smurfReducers = (state = initialState, action) => {
+export const smurfReducers = (state = initialState, action) => {
     switch (action.type) {
         default: 
-            state,
-    };
+           return state;
+    }
 };
