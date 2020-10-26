@@ -1,8 +1,18 @@
 const initialState = {
-          name: "",
-          age: 0,
-          height: "",
-          id: 0
+    smurfs: [
+    {
+      name: 'Heather',
+      age: 35,
+      height: '6cm',
+      id: 4
+    },
+    {
+        name: 'Holly',
+        age: 35,
+        height: '6cm',
+        id: 5
+      }
+]
 };
 
 export const smurfReducers = (state = initialState, action) => {
@@ -10,9 +20,11 @@ export const smurfReducers = (state = initialState, action) => {
         case "FEATCHING_SMURF_START":
             return {...state};
         case "FEATCHING_SMURF_SUCCESS": 
-            return {...state, name: action.payload.name, age: action.payload.age, height: action.payload.height };
+            return {...state};
         case "FEATURE_SMURF_FAILURE":
             return {...state, error: action.payload};
+        case "POST_SMURF":
+            return state;
         default: 
            return state;
     }
