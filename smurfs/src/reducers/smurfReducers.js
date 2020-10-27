@@ -20,7 +20,7 @@ export const smurfReducers = (state = initialState, action) => {
         case "FEATCHING_SMURF_START":
             return {...state};
         case "FEATCHING_SMURF_SUCCESS": 
-            return {...state};
+            return {...state, smurfs: action.payload};
         case "FEATURE_SMURF_FAILURE":
             return {...state, error: action.payload};
         case "POST_SMURF":
