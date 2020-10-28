@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getSmurf } from '../actions/smurfActions';
 
-const Smurfs = (props, {getSmurf}) => {
+const Smurfs = (props) => {
 
     useEffect(() => {
        props.getSmurf();
-      }, props[getSmurf]);
+      }, []);
 
     console.log(props.smurfs[0].name)
 
