@@ -24,10 +24,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+    Context API is a state management system in which several components can access state regardless of their position on the tree.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+    Reducers is the logic that changes the state in the appliction, actions are how we call those functions in our aplication, and the store what we use to connect everything to the components in the application.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  If we use redux, we will want to store our application state inside of reducers so all the components in the application can have access to them if needed.  Component state is the state we use for just once component and is dealt with, usually by using {useState} inside an individual component.
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+    Redux-thunk allows us to do things asynchronously while using Redux.  When using thunk there will be more logic written inside the action-creators than usual.
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+    While I can see why Redux could be helpful in keeping a very large application orginized, at this point my favorite state manangement system would have to be Conext API because it is very quick and easy to set up.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -35,15 +44,15 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
-- [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
-- [ ] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
-- [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+- [X] `fork & clone` this repository.
+- [X] `cd` into the forked copy of this repository.
+- [X] **RUN** `npm install` to retrieve all `server-side` the dependencies.
+- [X] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [X] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+- [X] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [X] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
+- [X] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
+- [X] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
@@ -51,9 +60,9 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use Redux as your state management system
-- [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
+- [X] Plan and implement how you are going to manage your state for your application
+- [X] You _must_ use Redux as your state management system
+- [X] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
 - [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
