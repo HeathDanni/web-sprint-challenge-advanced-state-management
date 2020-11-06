@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 //form to add new smurf
+//this needs to add new smurf to smurfs array state
 
 const SmurfForm = () => {
     const [form, setForm] = useState({
@@ -18,7 +19,7 @@ const SmurfForm = () => {
         })
     }
     console.log('form:', form)
-    
+
     return (
         <div>
             <h2>Add a new smurf here:</h2>

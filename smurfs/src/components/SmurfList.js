@@ -1,36 +1,43 @@
 import React from 'react';
 import Smurf from './Smurf';
+import {connect} from 'react-redux';
 
 //this component will loop through the state array to add data to the Smurf component
 
-let smurfs = [
-    {
-      name: 'Brainey',
-      age: 200,
-      height: '5cm',
-      id: 0
-    },
-    {
-        name: 'Heather',
-        age: 100,
-        height: '6cm',
-        id: 1
-      }
+// let smurfs = [
+//     {
+//       name: 'Brainey',
+//       age: 200,
+//       height: '5cm',
+//       id: 0
+//     },
+//     {
+//         name: 'Heather',
+//         age: 100,
+//         height: '6cm',
+//         id: 1
+//       }
 
-  ];
+//   ];
 
 
-const SmurfList = () => {
+const SmurfList = (props) => {
     return (
         <div>
             <h2>Here is a list of all the smurfs:</h2>
-            {smurfs.map((el) => {
+            {props.smurfs.map((el) => {
                 return (
-                <Smurf smurf={smurfs[smurfs.indexOf(el)]}/>
+                <Smurf smurf={props.smurfs[props.smurfs.indexOf(el)]}/>
             )}
             )}
         </div>
     )
 }
 
-export default SmurfList;
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs
+    };
+};
+
+export default connect(mapStateToProps)(SmurfList);
