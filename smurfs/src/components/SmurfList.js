@@ -23,6 +23,7 @@ let smurfs = [
 const SmurfList = () => {
     return (
         <div>
+            <h2>Here is a list of all the smurfs:</h2>
             {smurfs.map((el) => {
                 return (
                 <Smurf smurf={smurfs[smurfs.indexOf(el)]}/>
