@@ -2,12 +2,12 @@ import React from 'react';
 
 //this component will handle making an indivdiual smurf.  does not need state.  can instead use props.
 
-const Smurf = () => {
+const Smurf = (props) => {
     return (
         <div>
-            <p>Name:</p>
-            <p>Age:</p>
-            <p>Height:</p>
+            <p>Name: {props.smurf.name}</p>
+            <p>Age: {props.smurf.age}</p>
+            <p>Height: {props.smurf.height}</p>
         </div>
     )
 }

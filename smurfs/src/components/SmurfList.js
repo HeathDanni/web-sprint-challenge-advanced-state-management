@@ -19,12 +19,13 @@ let smurfs = [
 
   ];
 
+
 const SmurfList = () => {
     return (
         <div>
             {smurfs.map((el) => {
                 return (
-                <Smurf />
+                <Smurf smurf={smurfs[smurfs.indexOf(el)]}/>
             )}
             )}
         </div>
