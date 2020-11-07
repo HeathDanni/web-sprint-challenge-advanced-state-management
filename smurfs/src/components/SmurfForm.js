@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import { addSmurf } from '../actions';
+import {connect} from 'react-redux';
 
 
 //form to add new smurf
@@ -10,7 +12,7 @@ const initialState = {
     height: ""
 };
 
-const SmurfForm = () => {
+const SmurfForm = (props) => {
     const [form, setForm] = useState(initialState)
 
     const handleChange = (e) => {
@@ -20,18 +22,10 @@ const SmurfForm = () => {
             [e.target.name]: e.target.value
         })
     }
-    console.log('form:', form)
 
-    const addSmurf = (e) => {
-        axios
-            .post('http://localhost:3333/smurfs', form)
-            .then((res) => {
-                console.log('post res:', res)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
 
+    const submitForm = (e) => {
+        props.addSmurf(form);
         setForm(initialState);
 
     }
@@ -39,7 +33,7 @@ const SmurfForm = () => {
     return (
         <div>
             <h2>Add a new smurf here:</h2>
-            <form onSubmit={addSmurf}>
+            <form onSubmit={props.addSmurf(form)}>
                 <label htmlFor='name'>
                     Name:
                     <input
@@ -73,4 +67,10 @@ const SmurfForm = () => {
     )
 }
 
-export default SmurfForm;
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs
+    }
+}
+
+export default connect(mapStateToProps, {addSmurf})(SmurfForm);

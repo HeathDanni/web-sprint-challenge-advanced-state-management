@@ -7,7 +7,7 @@ const SmurfList = (props) => {
     
     useEffect(() => {
         props.getSmurfs()
-    }, [props.getSmurfs])
+    }, [])
 
     return (
         <div>

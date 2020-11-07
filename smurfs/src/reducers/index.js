@@ -21,9 +21,21 @@ export const SmurfReducer = (state = initialState, action) => {
                 return {
                     ...state
                 };
-        default:
-            return {
-                ...state
-            };
+            case "SENDING_SMURF_START":
+                return {
+                    ...state
+                };
+            case "SENDING_SMURF_SUCCESS":
+                return {
+                    ...state
+                };
+            case "SENDING_SMURF_FAILURE":
+                return {
+                    ...state
+                };
+            default:
+                return {
+                    ...state
+                };
         }
 };
