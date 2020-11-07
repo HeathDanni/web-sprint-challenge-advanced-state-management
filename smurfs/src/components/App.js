@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import SmurfList from './SmurfList';
 import SmurfForm from './SmurfForm';
-import {connect} from 'react-redux';
 
 class App extends Component {
   render() {
@@ -19,12 +18,5 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    name: state.name,
-    age: state.age,
-    height: state.height
-  }
-}
 
-export default connect(mapStateToProps)(App);
+export default App;

@@ -2,14 +2,14 @@ const initialState = {
     smurfs: [{
         name: "Raine",
         age: 0,
-        height: "",
+        height: "25",
         id: 0
 
     },
    { 
        name: "Saiya",
         age: 0,
-        height: "",
+        height: "50",
         id: 0
     }
 ]};
