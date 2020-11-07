@@ -1,24 +1,29 @@
 const initialState = {
-    smurfs: [{
-        name: "Raine",
-        age: 0,
-        height: "25",
-        id: 0
-
-    },
-   { 
-       name: "Saiya",
-        age: 0,
-        height: "50",
-        id: 0
-    }
-]};
+    loading: false,
+    smurfs: []
+};
 
 export const SmurfReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_SMURF":
-            return {...state}
-    default:
-        return {...state}
-    }
+            return {
+                ...state
+            };
+        case "FETCHING_SMURFS_START" :
+            return {
+                ...state, loading: true
+            };
+            case "FETCHING_SMURFS_SUCCESS" :
+                return {
+                   ...state, smurfs: action.payload
+                };
+            case "FETCHING_SMURFS_FAILURE" :
+                return {
+                    ...state
+                };
+        default:
+            return {
+                ...state
+            };
+        }
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Smurf from './Smurf';
 import {connect} from 'react-redux';
-import axios from 'axios';
+import { getSmurfs } from '../actions';
 
 //this component will loop through the state array to add data to the Smurf component
 
@@ -24,16 +24,11 @@ import axios from 'axios';
 
 const SmurfList = (props) => {
     
-    // useEffect(
-    //     axios
-    //         .get("http://localhost:3333/smurfs")
-    //         .then((res) => {
-    //             console.log('res:', res.data)
-    //         })
-    //         .catch((err) => {
-    //             console.log('err', err)
-    //         })
-    // , []);
+    useEffect(() => {
+        props.getSmurfs()
+    }, [])
+
+    // console.log(props.smurfs)
 
     return (
         <div>
@@ -53,4 +48,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(SmurfList);
+export default connect(mapStateToProps, {getSmurfs})(SmurfList);
